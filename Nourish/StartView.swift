@@ -9,41 +9,50 @@ import SwiftUI
 
 struct StartView: View {
     var body: some View {
-        NavigationView {
-            VStack(spacing: 20) {
-                Spacer()
+        NavigationStack {
+            ZStack {
+                Color("Gray1").ignoresSafeArea(.all)
                 
-                Text("nourish")
-                    .font(.system(size: 48, weight: .semibold))
-                    .foregroundColor(Color("Green"))
-                
-                Text("feel better, not perfect.")
-                    .foregroundColor(.gray)
-                    .font(.subheadline)
-                
-                Spacer()
-                
-                NavigationLink(destination: SignUpView()) {
-                    Text("get started")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color("Green"))
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                VStack() {
+                    Spacer()
+                    Text("nourish")
+                        .font(.system(size: 64, weight: .bold))
+                        .foregroundColor(Color("MainGreen"))
+                    
+                    Text("feel better, not perfect.")
+                        .foregroundColor(Color("Gray3"))
+                        .font(.system(size: 16))
+                    
+                    Spacer()
+                    
+                    VStack(spacing: 20) {
+                        NavigationLink(destination: SignUpView()) {
+                            Text("get started")
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color("MainGreen"))
+                                .foregroundColor(.white)
+                                .cornerRadius(20)
+                                .font(.system(size: 16))
+                        }
+                        .padding(.horizontal, 60)
+                        
+                        NavigationLink(destination: SignInView()) {
+                            Text("login")
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color("Gray2"))
+                                .foregroundColor(.white)
+                                .cornerRadius(20)
+                                .font(.system(size: 16))
+                        }
+                        .padding(.horizontal, 60)
+                    }
+                    
+                    Spacer()
                 }
-                .padding(.horizontal)
-                
-                NavigationLink(destination: SignInView()) {
-                    Text("login")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.gray.opacity(0.3))
-                        .foregroundColor(.black)
-                        .cornerRadius(10)
-                }
-                .padding(.horizontal)
+                .padding()
             }
-            .padding()
         }
     }
 }

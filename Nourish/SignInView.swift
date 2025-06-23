@@ -14,80 +14,134 @@ struct SignInView: View {
     var body: some View {
         VStack(spacing: 20) {
             Spacer()
-
-            Text("sign in")
-                .font(.title)
-                .bold()
-                .foregroundColor(Color("Green"))
             
-            TextField("email address", text: $email)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(10)
-
-            SecureField("password", text: $password)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(10)
-
-            HStack {
-                Spacer()
-                Button("forgot password?") {
-                    // handle reset
+            Text("sign in")
+                .font(.system(size: 48, weight: .bold))
+                .foregroundColor(Color("MainGreen"))
+            
+            Spacer()
+            
+            VStack(spacing: 20) {
+                HStack {
+                    Image(systemName: "envelope")
+                        .foregroundColor(.black)
+                    TextField("email address", text: $email)
+                        .foregroundColor(Color(red: 0.502, green: 0.478, blue: 0.478))
                 }
-                .font(.caption)
-                .foregroundColor(.blue)
-            }
+                .padding()
+                .background(Color("Gray2"))
+                .cornerRadius(20)
+                .frame(maxWidth: 350)
+                .frame(maxWidth: .infinity, alignment: .center)
+                
+                VStack(alignment: .trailing, spacing: 4) {
+                    HStack {
+                        Image(systemName: "lock")
+                            .foregroundColor(.black)
+                        SecureField("password", text: $password)
+                            .foregroundColor(Color(red: 0.502, green: 0.478, blue: 0.478))
+                    }
+                    .padding()
+                    .background(Color("Gray2"))
+                    .cornerRadius(20)
+                    .frame(maxWidth: 350)
+                    .frame(maxWidth: .infinity, alignment: .center)
 
-            Button("login") {
-                // handle login
+                    NavigationLink(destination: ForgotPasswordView()) {
+                        Text("forgot password?")
+                            .font(.system(size: 14))
+                            .foregroundColor(Color("Gray3"))
+                            .underline()
+                    }
+                    .padding(.trailing, 8)
+                }
             }
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(Color("Green"))
-            .foregroundColor(.white)
-            .cornerRadius(10)
-
+            .padding(.horizontal, 24)
+            
+            Spacer()
+            
+            Button(action: {
+                // handle log in
+            }) {
+                Text("login")
+                    .foregroundColor(.white)
+                    .font(.system(size: 16))
+                    .frame(maxWidth: 207)
+                    .padding()
+                    .background(Color("MainGreen"))
+                    .cornerRadius(20)
+            }
+            .padding(.horizontal, 60)
+            
+            Spacer()
+            Spacer()
+            
+            Divider()
+                .frame(height: 1)
+                .background(Color(.black))
+            
             HStack {
-                Divider()
-                Text("continue with")
-                Divider()
+                
+                Text("or continue with")
+                    .foregroundColor(Color("Gray3"))
+                    .font(.system(size: 16))
+                
             }
-
-            Button {
-                // Sign in with Apple
-            } label: {
+            
+            
+            
+            Button(action: {
+                // sign in with Apple
+            }) {
                 HStack {
                     Image(systemName: "applelogo")
                     Text("sign in with apple")
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(10)
+                .background(Color("Gray2"))
+                .foregroundColor(.black)
+                .cornerRadius(20)
             }
-
-            Button {
-                // Sign in with Google
-            } label: {
+            .padding(.horizontal, 50)
+            
+            Button(action: {
+                // sign in with Google
+            }) {
                 HStack {
-                    Image(systemName: "g.circle")
+                    Image("image")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 13, height: 13)
                     Text("sign in with google")
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(10)
+                .background(Color("Gray2"))
+                .foregroundColor(.black)
+                .cornerRadius(20)
             }
-
+            .padding(.horizontal, 50)
+            
             Spacer()
-
+            
             HStack {
                 Text("new here?")
-                NavigationLink("sign up!", destination: SignUpView())
+                    .foregroundColor(Color("Gray3"))
+                NavigationLink(destination: SignUpView()) {
+                    Text("sign up!")
+                        .foregroundColor(Color("Gray3"))
+                        .underline()
+                }
             }
-            .font(.caption)
+            .font(.system(size: 14))
+            .padding(.top, 8)
+            
+            Spacer()
         }
         .padding()
+        .background(Color("Gray1").ignoresSafeArea())
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
     }
 }
