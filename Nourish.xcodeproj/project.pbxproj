@@ -11,6 +11,7 @@
 		65DA4B912E09F729007B4EE4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 65DA4B902E09F729007B4EE4 /* FirebaseAuth */; };
 		65DA4B942E09F8A9007B4EE4 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 65DA4B932E09F8A9007B4EE4 /* GoogleSignIn */; };
 		65DA4B962E09F8A9007B4EE4 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 65DA4B952E09F8A9007B4EE4 /* GoogleSignInSwift */; };
+		65DA4B992E0A060B007B4EE4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 65DA4B972E0A05FF007B4EE4 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		65DA4B4E2E08DB39007B4EE4 /* Nourish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nourish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65DA4B5D2E08DB3A007B4EE4 /* NourishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NourishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65DA4B672E08DB3A007B4EE4 /* NourishUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NourishUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65DA4B972E0A05FF007B4EE4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -90,6 +92,7 @@
 				65DA4B602E08DB3A007B4EE4 /* NourishTests */,
 				65DA4B6A2E08DB3A007B4EE4 /* NourishUITests */,
 				65DA4B4F2E08DB39007B4EE4 /* Products */,
+				65DA4B972E0A05FF007B4EE4 /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65DA4B992E0A060B007B4EE4 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
